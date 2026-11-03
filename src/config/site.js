@@ -22,7 +22,8 @@ export const site = {
   phones: [
     { label: 'Mobile / WhatsApp', display: '+92 300 5389023', dial: '+923005389023' },
     { label: 'Mobile', display: '+92 321 845 2604', dial: '+923218452604' },
-    { label: 'Office', display: '+92 51 222 7646', dial: '+92512227646' },
+    { label: 'Office', display: '+92 51 544 3002', dial: '+92515443002' },
+    { label: 'Office', display: '+92 51 544 3003', dial: '+92515443003' },
   ],
 
   // WhatsApp number in international format, digits only (no "+", spaces or dashes).
