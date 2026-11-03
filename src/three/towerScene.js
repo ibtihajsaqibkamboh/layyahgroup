@@ -6,7 +6,7 @@ import * as THREE from 'three'
  * then the camera drifts slowly. Rendering pauses when the hero is off-screen.
  */
 
-const GOLD = 0xc4a46c
+const GOLD = 0x28b9ef
 
 // Seeded random so the lit-window pattern is the same on every visit.
 function seeded(seed) {
@@ -45,7 +45,7 @@ function windowStrip(seed) {
 function studioEnvironment(renderer) {
   const pmrem = new THREE.PMREMGenerator(renderer)
   const room = new THREE.Scene()
-  room.background = new THREE.Color(0x111214)
+  room.background = new THREE.Color(0x0d0b24)
   const panel = new THREE.BoxGeometry(1, 1, 1)
   const addLight = (color, intensity, pos, scale) => {
     const m = new THREE.Mesh(panel, new THREE.MeshBasicMaterial({ color: new THREE.Color(color).multiplyScalar(intensity) }))
@@ -76,7 +76,7 @@ export function createTowerScene(canvas, { lowPower = false, reducedMotion = fal
 
   const scene = new THREE.Scene()
   scene.environment = studioEnvironment(renderer)
-  scene.fog = new THREE.Fog(0x141518, 30, 70)
+  scene.fog = new THREE.Fog(0x0d0b24, 30, 70)
 
   const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 200)
   const lookAt = new THREE.Vector3(0, 8.5, 0)

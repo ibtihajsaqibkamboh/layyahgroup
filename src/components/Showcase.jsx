@@ -63,14 +63,16 @@ export default function Showcase({ id, tone, eyebrow, title, intro, category, de
               <li key={d}>{d}</li>
             ))}
           </ul>
-          <dl className="specs" data-reveal="up">
-            {specs.map(([k, v]) => (
-              <div key={k}>
-                <dt>{k}</dt>
-                <dd>{v}</dd>
-              </div>
-            ))}
-          </dl>
+          {specs && specs.length > 0 && (
+            <dl className="specs" data-reveal="up">
+              {specs.map(([k, v]) => (
+                <div key={k}>
+                  <dt>{k}</dt>
+                  <dd>{v}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
           <a href="#contact" className="btn btn-gold" data-reveal="up" onClick={(e) => (e.preventDefault(), scrollToId('contact'))}>
             {cta} <IconArrow width={18} height={18} />
           </a>

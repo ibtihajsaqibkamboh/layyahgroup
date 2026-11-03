@@ -79,8 +79,8 @@ export default function FacadeArt({ variant = 'tower', seed = 1, label = 'Projec
           <stop offset="1" stopColor="#2a2a27" />
         </linearGradient>
         <radialGradient id={`fa-sun-${variant}-${seed}`} cx="0.8" cy="0.25" r="0.6">
-          <stop offset="0" stopColor="#c4a46c" stopOpacity="0.32" />
-          <stop offset="1" stopColor="#c4a46c" stopOpacity="0" />
+          <stop offset="0" stopColor="#28b9ef" stopOpacity="0.32" />
+          <stop offset="1" stopColor="#28b9ef" stopOpacity="0" />
         </radialGradient>
       </defs>
       <rect width="400" height="300" fill={`url(#fa-sky-${variant}-${seed})`} />

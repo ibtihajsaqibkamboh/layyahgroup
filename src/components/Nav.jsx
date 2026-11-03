@@ -18,13 +18,8 @@ export const NAV_LINKS = [
 export function Logo() {
   return (
     <span className="logo">
-      <svg viewBox="0 0 40 40" className="logo-mark" aria-hidden="true">
-        <path d="M8 34V14l12-9 12 9v20" />
-        <path d="M15 34V22h10v12M8 18h24" />
-      </svg>
-      <span className="logo-text">
-        <Fill>{site.companyName}</Fill>
-        <small>Construction &amp; Architecture</small>
+      <span className="logo-badge">
+        <img src={site.logo} alt={`${site.companyName} logo`} width="857" height="494" />
       </span>
     </span>
   )

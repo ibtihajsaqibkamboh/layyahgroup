@@ -24,9 +24,9 @@ const SERVICES = [
   },
   {
     icon: IconCrane,
-    title: 'Residential & Commercial Construction',
-    text: 'General contracting for projects of any size, with disciplined site management and quality checks.',
-    items: ['Turnkey or labour contracts', 'Material procurement', 'Site safety & QA'],
+    title: 'Concrete Pumping & Structural Works',
+    text: 'Our own boom-pump fleet places concrete quickly and precisely, with reinforcement and grey structure done in-house.',
+    items: ['Boom concrete pumping', 'Foundations, columns, beams & slabs', 'Grey structure & masonry'],
   },
   {
     icon: IconCompass,

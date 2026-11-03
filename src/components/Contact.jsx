@@ -2,10 +2,21 @@ import { useRef, useState } from 'react'
 import { useReveal } from '../lib/motion.js'
 import { site, whatsappLink, telLink } from '../config/site.js'
 import { SplitWords, Fill, Eyebrow } from './Text.jsx'
-import { IconPhone, IconWhatsApp, IconMail, IconPin, IconClock, IconArrow } from './Icons.jsx'
+import { IconPhone, IconWhatsApp, IconMail, IconPin, IconClock, IconArrow, IconGlobe } from './Icons.jsx'
 
-const PROJECT_TYPES = ['Luxury house / villa', 'Commercial plaza / shopping centre', 'Multi-storey / apartments', 'Architectural design only', 'Project management', 'Other']
-const BUDGETS = ['Not sure yet', '[Budget range 1]', '[Budget range 2]', '[Budget range 3]', '[Budget range 4]']
+const PROJECT_TYPES = [
+  'House / villa construction',
+  'Commercial construction',
+  'Plaza / shopping centre',
+  'Multi-storey / apartments',
+  'Concrete pumping & structural work',
+  'Grey structure',
+  'Renovation & remodeling',
+  'Finishing work',
+  'Project management',
+  'Other',
+]
+const BUDGETS = ['Not sure yet', 'Under PKR 5M', 'PKR 5M–20M', 'PKR 20M–50M', 'PKR 50M+']
 
 const EMPTY = { name: '', phone: '', email: '', type: '', location: '', budget: '', message: '' }
 
@@ -108,15 +119,15 @@ export default function Contact() {
             a written estimate.
           </p>
           <ul className="contact-list" data-reveal="up">
-            <li>
-              <IconPhone />
-              <div>
-                <span>Call us</span>
-                <a href={telLink()}>
-                  <Fill>{site.phoneDisplay}</Fill>
-                </a>
-              </div>
-            </li>
+            {site.phones.map((p) => (
+              <li key={p.dial}>
+                <IconPhone />
+                <div>
+                  <span>{p.label}</span>
+                  <a href={telLink(p.dial)}>{p.display}</a>
+                </div>
+              </li>
+            ))}
             <li>
               <IconWhatsApp />
               <div>
@@ -130,8 +141,15 @@ export default function Contact() {
               <IconMail />
               <div>
                 <span>Email</span>
-                <a href={`mailto:${site.email.replace(/[[\]]/g, '')}`}>
-                  <Fill>{site.email}</Fill>
+                <a href={`mailto:${site.email}`}>{site.email}</a>
+              </div>
+            </li>
+            <li>
+              <IconGlobe />
+              <div>
+                <span>Website</span>
+                <a href={`https://${site.website}`} target="_blank" rel="noopener noreferrer">
+                  {site.website}
                 </a>
               </div>
             </li>
@@ -154,6 +172,17 @@ export default function Contact() {
               </div>
             </li>
           </ul>
+          {site.mapEmbed && (
+            <div className="contact-map" data-reveal="up">
+              <iframe
+                src={site.mapEmbed}
+                title={`${site.companyName} office location on Google Maps`}
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+          )}
         </div>
 
         <form className="quote-form" onSubmit={onSubmit} noValidate data-reveal="up" aria-labelledby="quote-title">

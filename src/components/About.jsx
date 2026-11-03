@@ -19,16 +19,16 @@ export default function About() {
           <span className="rule" data-reveal="line" />
           <div className="about-text" data-reveal="up">
             <p>
-              <Fill>{site.companyName}</Fill> is a design-and-build construction company delivering luxury homes,
-              commercial plazas and multi-storey buildings. Architects, structural engineers and site teams work
+              {site.legalName} provides complete residential, commercial, plaza, structural and concrete
+              construction services across Islamabad. Our own concrete pumping fleet, engineers and site teams work
               under one roof, so the building that gets drawn is the building that gets built.
             </p>
             <p>
-              Established in <Fill>{site.foundedYear}</Fill>. Every project is run with a fixed scope, a written
-              schedule and regular site reports, from foundation to final finishing.
+              With more than 10 years in construction, every project is run with quality materials, skilled
+              workmanship, safety first and clear project management, from foundation to final finishing.
             </p>
           </div>
-          <ul className="credentials" data-reveal="up" aria-label="Registrations and memberships">
+          <ul className="credentials" data-reveal="up" aria-label="Company highlights">
             {site.credentials.map((c) => (
               <li key={c}>
                 <Fill>{c}</Fill>

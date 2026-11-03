@@ -35,7 +35,10 @@ export default function Footer() {
         <div className="footer-grid">
           <div>
             <Logo />
-            <p className="footer-note">Luxury residential, commercial and high-rise construction, with architectural design and project management.</p>
+            <p className="footer-note">
+              {site.legalName}: residential, commercial, plaza, structural and concrete construction services in
+              Islamabad, Pakistan.
+            </p>
           </div>
           <nav aria-label="Footer">
             <h4>Explore</h4>
@@ -47,18 +50,20 @@ export default function Footer() {
           </nav>
           <div>
             <h4>Contact</h4>
-            <a href={telLink()}>
-              <IconPhone width={16} height={16} /> <Fill>{site.phoneDisplay}</Fill>
-            </a>
+            {site.phones.map((p) => (
+              <a key={p.dial} href={telLink(p.dial)}>
+                <IconPhone width={16} height={16} /> {p.display}
+              </a>
+            ))}
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
               <IconWhatsApp width={16} height={16} /> WhatsApp
             </a>
-            <p>
-              <Fill>{site.email}</Fill>
-            </p>
-            <p>
-              <Fill>{site.address}</Fill>
-            </p>
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+            <a href={`https://${site.website}`} target="_blank" rel="noopener noreferrer">
+              {site.website}
+            </a>
+            <p>{site.address}</p>
+            <p>{site.officeHours}</p>
           </div>
           <div>
             <h4>Follow</h4>
@@ -71,8 +76,9 @@ export default function Footer() {
         </div>
         <div className="footer-base">
           <span>
-            © {new Date().getFullYear()} <Fill>{site.companyName}</Fill>. All rights reserved.
+            © {new Date().getFullYear()} {site.companyName}. All rights reserved.
           </span>
+          <span>{site.tagline}</span>
           <span>Sample photography: Unsplash</span>
         </div>
       </div>

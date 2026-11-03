@@ -11,8 +11,6 @@ import WhyUs from './components/WhyUs.jsx'
 import Contact from './components/Contact.jsx'
 import Footer, { FloatingActions } from './components/Footer.jsx'
 
-const PH = '[Add your figure]'
-
 export default function App() {
   const [revealed, setRevealed] = useState(false)
 
@@ -47,8 +45,7 @@ export default function App() {
           intro="Contemporary villas and family houses where natural light, privacy and craftsmanship are planned from the first drawing."
           category="residential"
           deliverables={['Architectural & interior design', 'Grey structure through to finishing', 'Plumbing, electrical & HVAC', 'Boundary walls, landscaping & pools']}
-          specs={[['Typical timeline', PH], ['Rates from', PH]]}
-          cta="Get a residential quote"
+                    cta="Get a residential quote"
         />
         <Showcase
           id="commercial"
@@ -59,8 +56,7 @@ export default function App() {
           intro="Retail and office buildings planned for visibility, footfall and flexible tenant layouts, with façades that work as the building's signboard."
           category="commercial"
           deliverables={['Shop & office floor planning', 'Glazed façades & signage bands', 'Basement parking & services', 'Fire safety & lift coordination']}
-          specs={[['Typical timeline', PH], ['Rates from', PH]]}
-          cta="Get a commercial quote"
+                    cta="Get a commercial quote"
         />
         <Showcase
           id="high-rise"
@@ -70,8 +66,7 @@ export default function App() {
           intro="Apartment blocks and mixed-use towers with structural design, vertical transport and services coordinated before the first column is poured."
           category="highrise"
           deliverables={['RCC frame & foundation design', 'Typical floor & unit planning', 'Lifts, water, fire & electrical risers', 'Phased construction & handover']}
-          specs={[['Floors delivered', PH], ['Typical timeline', PH]]}
-          cta="Discuss a high-rise project"
+                    cta="Discuss a high-rise project"
         />
         <Gallery />
         <WhyUs />

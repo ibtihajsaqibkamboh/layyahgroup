@@ -83,7 +83,7 @@ export default function Hero({ revealed }) {
 
       <div className="hero-copy">
         <p className="hero-eyebrow">
-          <Fill>{site.companyName}</Fill> · Design &amp; Construction
+          {site.companyName} · Trusted construction partner in Islamabad
         </p>
         <h1 className="hero-title">
           {HEADLINE.map((l) => (
@@ -94,8 +94,8 @@ export default function Hero({ revealed }) {
         </h1>
         <span className="hero-rule" aria-hidden="true" />
         <p className="hero-sub">
-          Luxury villas, commercial plazas and multi-storey buildings, designed, engineered and delivered by one
-          accountable team from first sketch to handover.
+          From residential homes to commercial plazas, concrete pumping and large-scale structures, Layyah Group
+          delivers construction built around quality, precision and trust.
         </p>
         <div className="hero-ctas">
           <a href="#contact" className="btn btn-gold" onClick={(e) => (e.preventDefault(), scrollToId('contact'))}>
